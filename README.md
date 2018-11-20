@@ -22,6 +22,8 @@
 
     Vue::Compiler.parseComponent "<style>h1{color:red;}</style><template><div><span>{{ msg }}</span></div></template><script>var a=3;</script>"
 
+    ==> {:script=>"var a=3;", :template=>"<div><span>{{ msg }}</span></div>", :styles=>["h1{color:red;}"]}
+
 ## CREATE RENDER FUNCTION
 
 replace the template string with the render function in your Vue Object.

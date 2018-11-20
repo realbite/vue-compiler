@@ -1,13 +1,13 @@
 ## Vue Version
 
-    2.4.0
+    2.5.17
 
 ## INSTALLATION
 
     gem install vue-compiler
 
 
-## COMPILE A TEMPLATE 
+## COMPILE A TEMPLATE
 
     require 'vue/compiler'
 
@@ -38,12 +38,12 @@ NOTE The template must be contained with double quotes !!
 this will NOT compile .vue extension single file components !!
 
 ### example
- 
+
 in assets/js/app/index.coffee
-    
+
     this.app = new Vue({
         el: '#app'
-        
+
         template: """
            <div>
               <div class="header">
@@ -51,12 +51,12 @@ in assets/js/app/index.coffee
               </div>
            </div>
         """
-        
+
         data:
            msg:"hello from vue"
     })
-    
-    
+
+
 or of you prefer in javascript assets/js/app/index.js
 
     var  app = new Vue({
@@ -70,9 +70,9 @@ in your config.ru ..
 
     require 'sprockets'
     require 'vue/sprockets'
-    
+
     VueSprocketsCompiler.set_root '/app'   # the relative path under which any js files will be processed
-    
+
     .....
     .....
     .....
@@ -80,11 +80,9 @@ in your config.ru ..
         environment = Sprockets::Environment.new
         environment.append_path 'assets/js'
         environment.append_path 'assets/css'
-        .... 
-      
+        ....
+
         run environment
     end
     ....
     ....
-
- 

@@ -33,9 +33,9 @@ module Vue
 
       def _ctx
         @__ctx ||= begin
-          cxt = V8::Context.new
-          cxt.load  _compiler
-          cxt
+          ctx = V8::Context.new
+          ctx.load  _compiler
+          ctx
         end
       end
 
@@ -51,9 +51,10 @@ module Vue
 
       def parseComponent(file, options={})
         obj = _ctx[:VueTemplateCompiler][:parseComponent].call(file.to_s)
-        {:script=>obj[:script].to_s,
-         :template=>obj[:template].to_s,
-         :styles=>obj[:styles].to_s}
+        {:script=>obj[:script] && obj[:script][:content],
+         :template=>obj[:template] && obj[:template][:content],
+         :styles=>obj[:styles] && obj[:styles].map{ |s| s[:content] }
+        }
       end
 
 

@@ -14,12 +14,13 @@
 
     Vue::Compiler.compile "<div><span>{{ msg }}</span></div>"
 
-    => "with(this){return _c('div',[_c('span',[_v(_s(msg))])])}"
+      => {:render=>"with(this){return _c('div',[_c('span',[_v(_s(msg))])])}", :staticRenderFns=>[], :errors=>"", :tips=>""}
+
 
 
 ## PARSE A SFC
 
-    Vue::Compiler.parseComponent "<template><div><span>{{ msg }}</span></div></template>"
+    Vue::Compiler.parseComponent "<style>h1{color:red;}</style><template><div><span>{{ msg }}</span></div></template><script>var a=3;</script>"
 
 ## CREATE RENDER FUNCTION
 

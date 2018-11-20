@@ -33,8 +33,6 @@ replace the template string with the render function in your Vue Object.
 
 this will replace any template strings within an object in your regular javascript assets with a render function.
 
-NOTE The template must be contained with double quotes !!
-
 this will NOT compile .vue extension single file components !!
 
 ### example

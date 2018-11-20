@@ -8,12 +8,13 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.email = ['gems@realitybites.eu']
   s.homepage = 'https://github.com/realbite/vue-compiler'
-  
-  
+
+
   s.add_dependency('therubyracer')
 
   s.files = ['lib/vue/compiler.rb','lib/vue/sprockets.rb' ]
-  s.files << 'js/vue-compile-template.js'
+  s.files << 'js/vue-compile-template-2.4.js'
+  s.files << 'js/vue-compile-template-2.5.js'
   s.files << 'LICENSE'
   s.files << 'README.md'
 

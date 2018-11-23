@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.name = 'vue-compiler'
   s.description = %Q[vue-template-compiler functionality in a gem - compile and parse your vue.js templates]
   s.summary = %Q[vue-template-compiler functionality in a gem]
-  s.version = '0.1.4'
+  s.version = '0.1.5'
   s.platform = Gem::Platform::RUBY
   s.authors = ['Clive Andrews']
   s.license = 'MIT'

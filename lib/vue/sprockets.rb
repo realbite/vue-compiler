@@ -1,14 +1,20 @@
 # transform vue objects by compiling the templates into render functions.
 
+require 'sprockets'
 require 'vue/compiler'
 
 class VueSprocketsCompiler
 
   # compile templates under this path.
   def self.set_root(path=nil)
-    path = '/' + path unless path[0,1] == '/'
-    @root = path
+    path = [path].flatten
+    @path = path.map{|p| (p||'')[0,1] == '/' ? p : '/' + (p||'') }
   end
+
+  def self.is_in_path(path)
+    @path.any?{|p| path[0..p.length-1] == p}
+  end
+
 
   def self.toFunction(code)
      return 'function () {' + code + '}'
@@ -21,7 +27,7 @@ class VueSprocketsCompiler
 
     path = filename[load_path.length..-1]
 
-    if !@root || (path[0..@root.length-1] == @root)
+    if is_in_path(path)
       js = source.gsub( /(?<spaces>\s+)template\s*:\s*(?<quote>["`'])(?<code>.*?[^\\])\k<quote>/m ) do |match|
         spaces = "#{$1}"
         src = $3.gsub("\\n","\n")

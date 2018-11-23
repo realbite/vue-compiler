@@ -1,7 +1,5 @@
 require 'v8'
 
-
-
 module Vue
 
   class Compiler

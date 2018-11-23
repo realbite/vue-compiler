@@ -72,7 +72,7 @@ in your config.ru ..
     require 'sprockets'
     require 'vue/sprockets'
 
-    VueSprocketsCompiler.set_root '/app'   # the relative path under which any js files will be processed
+    VueSprocketsCompiler.set_root ['/app','/vue']   # the relative path(s) under which any js files will be processed
 
     .....
     .....

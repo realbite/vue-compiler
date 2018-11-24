@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/realbite/vue-compiler'
 
 
-  s.add_dependency('therubyracer')
+  s.add_dependency('execjs')
 
   s.files = ['lib/vue/compiler.rb','lib/vue/sprockets.rb' ]
   s.files << 'js/vue-compile-template-2.4.js'

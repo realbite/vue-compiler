@@ -1,6 +1,8 @@
 require 'test/unit'
 require_relative '../lib/vue/compiler'
 
+puts ExecJS.runtime
+
 class CompilerTest < Test::Unit::TestCase
   # def setup
   # end
@@ -13,11 +15,11 @@ class CompilerTest < Test::Unit::TestCase
     hash = Vue::Compiler.compile "<div><span>{{ msg }}</span></div>"
     assert_equal("with(this){return _c('div',[_c('span',[_v(_s(msg))])])}", hash[:render])
     assert_equal([], hash[:staticRenderFns])
-    assert_equal("", hash[:errors])
-    assert_equal("", hash[:tips])
+    assert_equal([], hash[:errors])
+    assert_equal([], hash[:tips])
 
     hash = Vue::Compiler.compile "<div><span>{{{} msg }}</span></div>"
-    assert_not_equal("", hash[:errors])
+    assert_not_equal([], hash[:errors])
 
   end
 

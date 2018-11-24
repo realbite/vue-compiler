@@ -14,7 +14,7 @@
 
     Vue::Compiler.compile "<div><span>{{ msg }}</span></div>"
 
-      => {:render=>"with(this){return _c('div',[_c('span',[_v(_s(msg))])])}", :staticRenderFns=>[], :errors=>"", :tips=>""}
+      => {:render=>"with(this){return _c('div',[_c('span',[_v(_s(msg))])])}", :staticRenderFns=>[], :errors=>[], :tips=>[]}
 
 
 
